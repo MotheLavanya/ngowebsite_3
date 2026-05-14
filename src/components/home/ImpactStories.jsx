@@ -8,7 +8,7 @@ const ImpactStories = () => {
     {
       title: 'Education for All',
       tag: 'Education',
-      img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800',
+      img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800',
       text: 'Empowering 5,000+ children with quality schooling and digital learning resources across rural Telangana.'
     },
     {
@@ -20,7 +20,7 @@ const ImpactStories = () => {
     {
       title: 'Women Empowerment',
       tag: 'Livelihood',
-      img: 'https://images.unsplash.com/photo-1590650153855-d9e808231d41?q=80&w=800',
+      img: 'https://images.unsplash.com/photo-1583971663176-dd7180de1b76?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0',
       text: 'Providing vocational training and micro-finance support to 1,200+ women to build sustainable futures.'
     },
     {
@@ -38,7 +38,7 @@ const ImpactStories = () => {
     {
       title: 'Disaster Relief',
       tag: 'Emergency',
-      img: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=800',
+      img: 'https://plus.unsplash.com/premium_photo-1683140535496-101478a22e75?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0',
       text: 'Rapid response and long-term rehabilitation support for communities hit by natural disasters.'
     }
   ];
@@ -54,7 +54,7 @@ const ImpactStories = () => {
         <div className="impact-split-layout">
           {/* Left Side: Static Text */}
           <div className="impact-intro-side">
-            <SectionHeader subtitle="Our Service" title="Creating Lasting Change" />
+            <SectionHeader subtitle="What We Do" title="How We Can Help" />
             <p className="impact-intro-p">
               Every life touched by our foundation has a story to tell. These are just a few glimpses into the incredible journeys of the people we serve and the change we've witnessed together.
             </p>

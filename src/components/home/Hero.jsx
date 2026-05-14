@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Heart, Play, Sparkles, CheckCircle } from 'lucide-react';
+import { toast } from 'react-hot-toast';
 import Button from '../Button';
 
 const Hero = () => {
@@ -114,7 +115,11 @@ const Hero = () => {
             <Button to="/donate" size="lg" icon={ArrowRight} className="btn-impact">
               Donate Now
             </Button>
-            <div className="hero-video-link">
+            <div 
+              className="hero-video-link" 
+              onClick={() => toast.success('Video Story Launching Soon!', { icon: '🎬' })}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="play-btn-outer">
                 <div className="play-btn-inner">
                   <Play fill="currentColor" size={16} />

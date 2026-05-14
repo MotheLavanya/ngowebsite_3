@@ -1,0 +1,238 @@
+/* ── Community Mosaic Blog (Traditional NGO Style) ── */
+
+.blog-page {
+  padding-top: 0;
+  background: #fff;
+}
+
+/* ── Mosaic Hero Section ── */
+.blog-mosaic-hero {
+  padding: 12rem 0 8rem;
+  background: #fdfdfd;
+  position: relative;
+}
+
+.mosaic-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .mosaic-hero-grid { grid-template-columns: 1fr; text-align: center; }
+}
+
+.mosaic-hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 950;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+}
+
+.mosaic-hero-text h1 span {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(37, 99, 235, 0.2);
+}
+
+.mosaic-hero-text p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 550px;
+}
+
+.v5-hero-visual {
+  position: relative;
+}
+
+.v5-portal-wrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.v5-portal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10rem 4rem 10rem 4rem;
+  box-shadow: 0 40px 100px rgba(15, 23, 42, 0.15);
+  display: block;
+}
+
+.v5-floating-accent {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: var(--primary);
+  opacity: 0.05;
+  border-radius: 3rem;
+  transform: rotate(15deg);
+  z-index: -1;
+}
+
+/* ── Community Masonry Grid ── */
+.community-grid-section {
+  padding: 8rem 0;
+  background: white;
+}
+
+.masonry-blog-grid {
+  columns: 3;
+  column-gap: 2rem;
+}
+
+@media (max-width: 1100px) { .masonry-blog-grid { columns: 2; } }
+@media (max-width: 640px) { .masonry-blog-grid { columns: 1; } }
+
+.impact-story-card {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 2rem;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.impact-story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+  border-color: var(--primary);
+}
+
+.story-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.impact-story-card:hover .story-thumb img {
+  transform: scale(1.05);
+}
+
+.story-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: var(--primary);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.story-content {
+  padding: 2.5rem;
+}
+
+.story-content .date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.story-content h3 {
+  font-size: 1.4rem;
+  font-weight: 950;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.story-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.story-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.5rem;
+}
+
+.action-link {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.impact-result {
+  font-size: 0.75rem;
+  font-weight: 900;
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  padding: 0.4rem 0.75rem;
+  border-radius: 50px;
+}
+
+/* ── Traditional Newsletter (High Trust) ── */
+.trust-newsletter {
+  background: #f8fafc;
+  border-radius: 4rem;
+  padding: 8rem 4rem;
+  text-align: center;
+  margin-top: 4rem;
+  border: 1px solid #e2e8f0;
+}
+
+.trust-newsletter h2 {
+  font-size: 3rem;
+  font-weight: 950;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.trust-newsletter p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.newsletter-box {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) { .newsletter-box { flex-direction: column; } }
+
+.newsletter-box input {
+  flex: 1;
+  padding: 1.25rem 2rem;
+  border-radius: 50px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-box input:focus { border-color: var(--primary); }

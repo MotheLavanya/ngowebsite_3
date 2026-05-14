@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import { Toaster } from 'react-hot-toast';
 
 // Lazy loading pages for performance
 const Home = lazy(() => import('./pages/Home'));
@@ -13,6 +15,9 @@ const Volunteer = lazy(() => import('./pages/Volunteer'));
 const Transparency = lazy(() => import('./pages/Transparency'));
 const Blog = lazy(() => import('./pages/Blog'));
 const Contact = lazy(() => import('./pages/Contact'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const RefundPolicy = lazy(() => import('./pages/RefundPolicy'));
 
 // Loading component
 const Loading = () => (
@@ -33,6 +38,8 @@ const Loading = () => (
 function App() {
   return (
     <Router>
+      <Toaster position="bottom-right" reverseOrder={false} />
+      <ScrollToTop />
       <div className="app-container">
         <Navbar />
         <main>
@@ -47,6 +54,9 @@ function App() {
               <Route path="/transparency" element={<Transparency />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/refund-policy" element={<RefundPolicy />} />
             </Routes>
           </Suspense>
         </main>

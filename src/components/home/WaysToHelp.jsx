@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Calendar, Users, Globe, ArrowRight, Briefcase, Megaphone, Gift } from 'lucide-react';
 import SectionHeader from '../SectionHeader';
 
 const WaysToHelp = () => {
+  const navigate = useNavigate();
   const [activeIdx, setActiveIdx] = React.useState(0);
   
   const ways = [
@@ -25,6 +27,7 @@ const WaysToHelp = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="get-involved-btn"
+            onClick={() => navigate('/volunteer')}
           >
             Get Involved Now
           </motion.button>

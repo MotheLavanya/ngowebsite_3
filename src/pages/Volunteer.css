@@ -1,0 +1,318 @@
+/* ── Volunteer (Get Involved) Page Modern System ── */
+
+.volunteer-page {
+  padding-top: 0;
+}
+
+/* ── Creative Volunteer Hero ── */
+.volunteer-hero-v4 {
+  padding: 12rem 0 8rem;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.volunteer-v4-container {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+@media (max-width: 1024px) {
+  .volunteer-v4-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+}
+
+.v4-hero-content {
+  flex: 1.2;
+}
+
+.v4-kicker {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.v4-hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 950;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+}
+
+.v4-hero-content h1 span {
+  color: var(--primary);
+}
+
+.v4-hero-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .v4-hero-content p { margin: 0 auto 3rem; }
+}
+
+.v4-hero-visual {
+  flex: 1;
+  position: relative;
+}
+
+.v4-portal-wrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.v4-portal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4rem 10rem 4rem 10rem;
+  box-shadow: 0 40px 100px rgba(15, 23, 42, 0.15);
+}
+
+.v4-floating-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.v4-badge-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v4-badge-info h4 {
+  font-size: 1.25rem;
+  font-weight: 950;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.v4-badge-info span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* ── Pillars of Action (Roles) ── */
+.roles-section-v4 {
+  padding: 8rem 0;
+  background: white;
+}
+
+.roles-v4-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .roles-v4-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .roles-v4-grid { grid-template-columns: 1fr; }
+}
+
+.role-pillar-v4 {
+  background: #f8fafc;
+  padding: 3rem 2.5rem;
+  border-radius: 2.5rem;
+  position: relative;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.role-pillar-v4:hover {
+  background: white;
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+  border-color: var(--primary);
+}
+
+.p-icon {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: var(--primary);
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+}
+
+.role-pillar-v4:hover .p-icon {
+  background: var(--primary);
+  color: white;
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.role-pillar-v4 h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.role-pillar-v4 p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pillar-number {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 950;
+  color: #0f172a;
+  opacity: 0.05;
+}
+
+/* ── Modern Application Form ── */
+.apply-section-v4 {
+  padding: 4rem 0;
+  background: #0f172a;
+  position: relative;
+  overflow: hidden;
+}
+
+.v4-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.v4-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.v4-form-header h2 {
+  font-size: 3rem;
+  font-weight: 950;
+  color: white;
+}
+
+.v4-form-header p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 600px;
+  margin: 1rem auto 0;
+}
+
+.v4-glass-form {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.v4-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .v4-form-row { grid-template-columns: 1fr; }
+}
+
+.v4-input-group {
+  position: relative;
+}
+
+.v4-glass-form input, 
+.v4-glass-form select, 
+.v4-glass-form textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.v4-glass-form input:focus, 
+.v4-glass-form select:focus, 
+.v4-glass-form textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+.v4-glass-form textarea {
+  height: 100px;
+  margin-bottom: 2rem;
+  resize: none;
+}
+
+.v4-form-submit {
+  text-align: center;
+}
+
+.v4-form-submit button {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Ambient Orbs */
+.v4-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--primary);
+  filter: blur(150px);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.v4-orb.o1 { top: -10%; left: -10%; }
+.v4-orb.o2 { bottom: -10%; right: -10%; background: #ec4899; }
