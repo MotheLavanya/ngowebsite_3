@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <Link to="/" className="logo-container">
           <Heart className="logo-icon" size={32} fill="var(--primary)" />
-          <span className="logo-text">Empower<span>Hope</span></span>
+          <span className="logo-text"><span>Empower</span>Hope</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -129,14 +129,13 @@ const Navbar = () => {
 
         .logo-text {
           font-family: 'Outfit', sans-serif;
-          font-size: 1.5rem;
-          font-weight: 800;
-          color: var(--text-main);
-          letter-spacing: -0.5px;
-        }
-
-        .logo-text span {
-          color: var(--primary);
+          font-size: 1.6rem;
+          font-weight: 900;
+          background: linear-gradient(135deg, var(--primary) 0%, #f97316 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          letter-spacing: -1px;
+          text-transform: capitalize;
         }
 
         .desktop-links {

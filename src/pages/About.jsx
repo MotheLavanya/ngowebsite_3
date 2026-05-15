@@ -25,8 +25,8 @@ const About = () => {
 
   const team = [
     { name: 'Dr. Anjali Rao', role: 'Founder & Chairperson', img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600' },
-    { name: 'Ravi Shankar', role: 'Executive Director', img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600' },
-    { name: 'Priya Mehta', role: 'Head of Programs', img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600' },
+    { name: 'Ravi Shankar', role: 'Executive Director', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600' },
+    { name: 'Priya Mehta', role: 'Head of Programs', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600' },
     { name: 'Arun Kumar', role: 'Finance & Compliance', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600' },
   ];
 
@@ -63,10 +63,10 @@ const About = () => {
           </div>
           <div className="hero-v3-visual">
             <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="v3-img-large">
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=800" alt="Mission" />
+              <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=800" alt="Mission" />
             </motion.div>
             <motion.div animate={{ y: [0, 20, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="v3-img-small">
-              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?q=80&w=400" alt="Community" />
+              <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=400" alt="Community" />
             </motion.div>
           </div>
         </div>
@@ -230,7 +230,7 @@ const About = () => {
       <section className="founder-asymmetric section-padding">
         <div className="container founder-grid-v3">
           <div className="founder-image-v3">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600" alt="Founder" />
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800" alt="Founder" />
             <div className="founder-name-tag">
               <h3>Dr. Anjali Rao</h3>
               <span>Founder & Chairperson</span>

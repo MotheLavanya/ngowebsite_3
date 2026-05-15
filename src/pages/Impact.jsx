@@ -95,21 +95,21 @@ const Impact = () => {
               transition={{ duration: 1 }}
               className="v3-portal-main"
             >
-              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?q=80&w=800" alt="Rural Transformation" />
+              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800" alt="Community Impact" />
             </motion.div>
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="v3-portal-sub s1"
             >
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=400" alt="Aid Support" />
+              <img src="https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?q=80&w=400" alt="Education" />
             </motion.div>
             <motion.div 
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="v3-portal-sub s2"
             >
-              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400" alt="Digital Literacy" />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=400" alt="Healthcare" />
             </motion.div>
             <div className="v3-accent-blob" />
           </div>
@@ -263,7 +263,7 @@ const Impact = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800" 
+              src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800" 
               className="gallery-img-v5 g1" 
               alt="Community" 
             />
@@ -272,7 +272,7 @@ const Impact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400" 
+              src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=400" 
               className="gallery-img-v5 g2" 
               alt="Education" 
             />
@@ -281,7 +281,7 @@ const Impact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?q=80&w=400" 
+              src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=400" 
               className="gallery-img-v5 g3" 
               alt="Health" 
             />

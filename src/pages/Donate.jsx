@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { CreditCard, Heart, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
-import { toast } from 'react-hot-toast';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CreditCard, Heart, ShieldCheck, Zap, ArrowRight, CheckCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import SectionHeader from '../components/SectionHeader';
 import Button from '../components/Button';
@@ -9,9 +8,11 @@ import Button from '../components/Button';
 const Donate = () => {
   const [amount, setAmount] = useState('1000');
   const [frequency, setFrequency] = useState('once');
+  const [paymentStatus, setPaymentStatus] = useState('idle'); // idle | processing | success
 
   const handleDonate = (e) => {
     e.preventDefault();
+    setPaymentStatus('processing');
     
     // Cinematic Confetti
     const duration = 3 * 1000;
@@ -24,6 +25,8 @@ const Donate = () => {
       const timeLeft = animationEnd - Date.now();
 
       if (timeLeft <= 0) {
+        setPaymentStatus('success');
+        setTimeout(() => setPaymentStatus('idle'), 6000);
         return clearInterval(interval);
       }
 
@@ -31,18 +34,6 @@ const Donate = () => {
       confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
       confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
     }, 250);
-
-    toast.success(`Contribution of ₹${amount} Received!`, {
-      duration: 6000,
-      icon: '💎',
-      style: {
-        borderRadius: '20px',
-        background: '#0f172a',
-        color: '#fff',
-        padding: '20px',
-        fontWeight: '900'
-      },
-    });
   };
 
   const presetAmounts = ['500', '1000', '2500', '5000', '10000'];
@@ -128,10 +119,40 @@ const Donate = () => {
               </div>
             </div>
 
-            <Button size="lg" className="btn-full" icon={CreditCard} onClick={handleDonate}>
-              Proceed to Payment
-            </Button>
-
+            <AnimatePresence mode="wait">
+              {paymentStatus === 'success' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  style={{
+                    padding: '1.5rem',
+                    background: '#f0fdf4',
+                    border: '1px solid #86efac',
+                    borderRadius: '1rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.75rem',
+                    color: '#15803d',
+                    fontWeight: 700,
+                    textAlign: 'center'
+                  }}
+                >
+                  <CheckCircle size={32} />
+                  Contribution of ₹{amount} Received! <br />
+                  <span style={{ fontSize: '0.9rem', color: '#166534', fontWeight: 500 }}>Thank you for your generous support.</span>
+                </motion.div>
+              ) : (
+                <motion.div key="button" initial={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <Button size="lg" className="btn-full" icon={CreditCard} onClick={handleDonate} disabled={paymentStatus === 'processing'}>
+                    {paymentStatus === 'processing' ? 'Processing...' : 'Proceed to Payment'}
+                  </Button>
+                </motion.div>
+              )}
+            </AnimatePresence>
             <div className="form-footer">
               <ShieldCheck size={16} />
               <span>Secure encrypted transaction via Razorpay</span>

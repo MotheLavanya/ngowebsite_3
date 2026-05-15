@@ -1343,6 +1343,12 @@
   gap: 2rem;
 }
 
+.join-step-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .join-ribbon-grid {
     grid-template-columns: 1fr;

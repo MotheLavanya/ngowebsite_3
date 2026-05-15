@@ -1,21 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Heart, Users, Calendar } from 'lucide-react';
-import { toast } from 'react-hot-toast';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Heart, Users, Calendar, CheckCircle } from 'lucide-react';
 import Button from '../components/Button';
 import './Blog.css';
 
 const Blog = () => {
+  const [subStatus, setSubStatus] = useState('idle');
+
   const handleSubscribe = (e) => {
     e.preventDefault();
-    const loadingToast = toast.loading('Subscribing to impact...');
-    
+    setSubStatus('sending');
     setTimeout(() => {
-      toast.dismiss(loadingToast);
-      toast.success('Welcome to the Circle! Check your inbox soon.', {
-        icon: '💌',
-      });
+      setSubStatus('sent');
       e.target.reset();
+      setTimeout(() => setSubStatus('idle'), 5000);
     }, 1200);
   };
 
@@ -26,7 +24,7 @@ const Blog = () => {
       title: 'Digital Frontier: Solar Labs Reach 50 Villages',
       date: 'May 10, 2024',
       result: '5,000+ Students',
-      image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800',
       excerpt: 'Our mission to bridge the digital divide has hit a new milestone in rural Telangana.'
     },
     {
@@ -35,7 +33,7 @@ const Blog = () => {
       title: 'Laxmi’s Journey: From Homemaker to CEO',
       date: 'April 25, 2024',
       result: 'Success Story',
-      image: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800',
       excerpt: 'Witness how micro-financing is transforming lives at the grassroots level.'
     },
     {
@@ -44,7 +42,7 @@ const Blog = () => {
       title: 'Slum Health: Mobile Clinic Impact Report',
       date: 'April 12, 2024',
       result: '1,200 Patients',
-      image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800',
       excerpt: 'Providing primary care to the most underserved urban communities this quarter.'
     },
     {
@@ -53,7 +51,7 @@ const Blog = () => {
       title: 'Solar Wells: Clean Water for Every Household',
       date: 'March 30, 2024',
       result: '500 Families',
-      image: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800',
       excerpt: 'No more walking miles for water. Solar technology is providing constant access.'
     },
     {
@@ -62,7 +60,7 @@ const Blog = () => {
       title: 'Join our Weekend Mentorship Program',
       date: 'March 15, 2024',
       result: 'Join Us',
-      image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=800',
       excerpt: 'Spend your weekends shaping the future of a child. Volunteer orientation next week.'
     },
     {
@@ -71,7 +69,7 @@ const Blog = () => {
       title: 'The Power of Collective: Self-Help Groups',
       date: 'March 05, 2024',
       result: '25 SHGs Formed',
-      image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800',
       excerpt: 'Building resilient community structures to ensure long-term sustainable growth.'
     }
   ];
@@ -96,7 +94,7 @@ const Blog = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="v5-portal-wrap"
             >
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=800" alt="Blog Hero" className="v5-portal-image" />
+              <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800" alt="Blog Hero" className="v5-portal-image" />
               <div className="v5-floating-accent" />
             </motion.div>
           </div>
@@ -142,10 +140,46 @@ const Blog = () => {
           >
             <h2>Stay in the Circle</h2>
             <p>Join 10,000+ supporters who receive our monthly impact digest and exclusive field reports.</p>
-            <form onSubmit={handleSubscribe} className="newsletter-box">
-              <input type="email" placeholder="Your email address" required />
-              <Button variant="primary" size="lg">Subscribe</Button>
-            </form>
+            <AnimatePresence mode="wait">
+              {subStatus === 'sent' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  style={{
+                    padding: '1.5rem',
+                    background: '#f0fdf4',
+                    border: '1px solid #86efac',
+                    borderRadius: '1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.75rem',
+                    color: '#15803d',
+                    fontWeight: 600,
+                    maxWidth: '500px',
+                    margin: '0 auto'
+                  }}
+                >
+                  <CheckCircle size={20} />
+                  Welcome to the Circle! Check your inbox soon.
+                </motion.div>
+              ) : (
+                <motion.form 
+                  key="form"
+                  onSubmit={handleSubscribe} 
+                  className="newsletter-box"
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <input type="email" placeholder="Your email address" required />
+                  <Button variant="primary" size="lg" disabled={subStatus === 'sending'}>
+                    {subStatus === 'sending' ? 'Subscribing...' : 'Subscribe'}
+                  </Button>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </section>

@@ -18,7 +18,7 @@ const Programs = () => {
       ],
       icon: BookOpen,
       color: '#f97316',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800'
     },
     {
       title: 'Swasthya Camp',
@@ -31,7 +31,7 @@ const Programs = () => {
       ],
       icon: HeartPulse,
       color: '#2563eb',
-      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800'
     },
     {
       title: 'Nari Shakti',
@@ -57,7 +57,7 @@ const Programs = () => {
       ],
       icon: Sprout,
       color: '#0ea5e9',
-      image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800'
     }
   ];
 
@@ -95,7 +95,7 @@ const Programs = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="v5-bubble b1"
             >
-              <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=400" alt="I1" />
+              <img src="https://images.unsplash.com/photo-1571019614242-1cb2f99b2d8b?q=80&w=400" alt="I1" />
             </motion.div>
             <motion.div 
               animate={{ y: [0, 30, 0] }}
@@ -109,7 +109,7 @@ const Programs = () => {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="v5-bubble b3"
             >
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=400" alt="I3" />
+              <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=400" alt="I3" />
             </motion.div>
             <motion.div 
               animate={{ scale: [1, 1.1, 1] }}

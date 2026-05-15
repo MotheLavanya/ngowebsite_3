@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
-import { Toaster } from 'react-hot-toast';
-
 // Lazy loading pages for performance
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -38,7 +36,6 @@ const Loading = () => (
 function App() {
   return (
     <Router>
-      <Toaster position="bottom-right" reverseOrder={false} />
       <ScrollToTop />
       <div className="app-container">
         <Navbar />

@@ -1,0 +1,132 @@
+/* ── Transparency Page Modern V5 ── */
+
+.transparency-page {
+  background: #fff;
+}
+
+.transparency-hero-v5 {
+  padding: 12rem 0 8rem;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.v5-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.v5-hero-text h1 {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 950;
+  color: #0f172a;
+  line-height: 1;
+  margin-bottom: 2rem;
+  letter-spacing: -3px;
+}
+
+.v5-hero-text h1 span {
+  color: var(--primary);
+}
+
+.v5-hero-text p {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.v5-kicker {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+/* Portal Visual */
+.v5-hero-visual {
+  position: relative;
+}
+
+.v5-portal-main {
+  position: relative;
+  z-index: 2;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+  transform: perspective(1000px) rotateY(-10deg);
+}
+
+.v5-portal-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.v5-accent-ring {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border: 15px solid var(--primary);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Reports Grid */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.report-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 1px solid #f1f5f9;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.report-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+}
+
+.report-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+@media (max-width: 991px) {
+  .v5-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .v5-hero-text p {
+    margin: 0 auto;
+  }
+  
+  .v5-portal-main {
+    transform: none;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

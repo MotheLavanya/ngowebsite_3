@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Download, CheckCircle } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
+import './Transparency.css';
 
 const Transparency = () => {
   const reports = [
@@ -13,10 +14,29 @@ const Transparency = () => {
 
   return (
     <div className="transparency-page">
-      <section className="page-header">
-        <div className="container">
-          <h1>Transparency & Accountability</h1>
-          <p>We are committed to the highest standards of financial honesty and operational excellence.</p>
+      <section className="transparency-hero-v5">
+        <div className="container v5-hero-grid">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="v5-hero-text"
+          >
+            <span className="v5-kicker">TRUST & ACCOUNTABILITY</span>
+            <h1>Radical <span>Transparency.</span> <br/> Total <span>Impact.</span></h1>
+            <p>We are committed to the highest standards of financial honesty. Every rupee donated is a seed of change, and we ensure you see it grow.</p>
+          </motion.div>
+          
+          <div className="v5-hero-visual">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="v5-portal-main"
+            >
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800" alt="Financial Integrity" />
+            </motion.div>
+            <div className="v5-accent-ring" />
+          </div>
         </div>
       </section>
 

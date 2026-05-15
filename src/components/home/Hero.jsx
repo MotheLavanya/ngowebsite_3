@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Heart, Play, Sparkles, CheckCircle } from 'lucide-react';
-import { toast } from 'react-hot-toast';
 import Button from '../Button';
 
 const Hero = () => {
+  const [videoText, setVideoText] = useState('See Our Story');
+
+  const handleVideoClick = () => {
+    setVideoText('Launching Soon! 🎬');
+    setTimeout(() => setVideoText('See Our Story'), 3000);
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -117,7 +122,7 @@ const Hero = () => {
             </Button>
             <div 
               className="hero-video-link" 
-              onClick={() => toast.success('Video Story Launching Soon!', { icon: '🎬' })}
+              onClick={handleVideoClick}
               style={{ cursor: 'pointer' }}
             >
               <div className="play-btn-outer">
@@ -125,15 +130,16 @@ const Hero = () => {
                   <Play fill="currentColor" size={16} />
                 </div>
               </div>
-              <span>See Our Story</span>
+              <span>{videoText}</span>
             </div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-trust-modern">
             <div className="trust-avatars">
-              {[1,2,3,4].map(i => (
-                <img key={i} src={`https://i.pravatar.cc/150?u=supporter${i}`} alt="Supporter" />
-              ))}
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150" alt="Supporter" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Supporter" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Supporter" />
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Supporter" />
               <div className="avatar-plus">+5k</div>
             </div>
             <div className="trust-text">

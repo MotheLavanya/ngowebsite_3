@@ -219,43 +219,57 @@
 }
 
 .v4-form-container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
 }
 
 .v4-form-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .v4-form-header h2 {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 950;
   color: white;
+  line-height: 1.1;
+  margin-bottom: 1rem;
 }
 
 .v4-form-header p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.6);
-  max-width: 600px;
-  margin: 1rem auto 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .v4-form-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .v4-form-header {
+    text-align: center;
+  }
 }
 
 .v4-glass-form {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
-  padding: 2.5rem;
-  border-radius: 2.5rem;
+  padding: 2rem;
+  border-radius: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .v4-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-bottom: 1.25rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 640px) {
@@ -270,12 +284,12 @@
 .v4-glass-form select, 
 .v4-glass-form textarea {
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   color: white;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   outline: none;
   transition: all 0.3s ease;
 }
@@ -289,8 +303,8 @@
 }
 
 .v4-glass-form textarea {
-  height: 100px;
-  margin-bottom: 2rem;
+  height: 80px;
+  margin-bottom: 1.5rem;
   resize: none;
 }
 

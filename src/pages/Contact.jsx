@@ -1,24 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, Globe, Share2, Play, Heart, ShieldCheck, Sparkles } from 'lucide-react';
-import { toast } from 'react-hot-toast';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Phone, Mail, Send, Globe, Share2, Play, Heart, CheckCircle } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import Button from '../components/Button';
 import './Contact.css';
 
 const Contact = () => {
+  const [formStatus, setFormStatus] = useState('idle'); // idle | sending | sent
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const loadingToast = toast.loading('Sending your message...');
-    
-    // Mocking API call
+    setFormStatus('sending');
     setTimeout(() => {
-      toast.dismiss(loadingToast);
-      toast.success('Message sent! We will contact you soon.', {
-        duration: 5000,
-        icon: '🚀',
-      });
+      setFormStatus('sent');
       e.target.reset();
+      setTimeout(() => setFormStatus('idle'), 5000);
     }, 1500);
   };
 
@@ -126,9 +122,34 @@ const Contact = () => {
                   <textarea placeholder="How can we help?" required></textarea>
                 </div>
 
-                <Button variant="primary" size="lg" icon={Send} className="btn-full">
-                  Send Message
+                <Button variant="primary" size="lg" icon={Send} className="btn-full" disabled={formStatus === 'sending'}>
+                  {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                 </Button>
+
+                <AnimatePresence>
+                  {formStatus === 'sent' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      style={{
+                        marginTop: '1.5rem',
+                        padding: '1rem 1.5rem',
+                        background: '#f0fdf4',
+                        border: '1px solid #86efac',
+                        borderRadius: '1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.75rem',
+                        color: '#15803d',
+                        fontWeight: 600
+                      }}
+                    >
+                      <CheckCircle size={20} />
+                      Message sent! We'll get back to you within 24 hours.
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </form>
             </div>
           </motion.div>
