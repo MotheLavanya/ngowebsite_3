@@ -24,7 +24,7 @@ const Blog = () => {
       title: 'Digital Frontier: Solar Labs Reach 50 Villages',
       date: 'May 10, 2024',
       result: '5,000+ Students',
-      image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800',
+      image: '/education_program_new_1778653541558.png',
       excerpt: 'Our mission to bridge the digital divide has hit a new milestone in rural Telangana.'
     },
     {
@@ -33,7 +33,7 @@ const Blog = () => {
       title: 'Laxmi’s Journey: From Homemaker to CEO',
       date: 'April 25, 2024',
       result: 'Success Story',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800',
+      image: '/women_empowerment_program_1778921114215.png',
       excerpt: 'Witness how micro-financing is transforming lives at the grassroots level.'
     },
     {
@@ -42,7 +42,7 @@ const Blog = () => {
       title: 'Slum Health: Mobile Clinic Impact Report',
       date: 'April 12, 2024',
       result: '1,200 Patients',
-      image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800',
+      image: '/healthcare_program_new_1778653774471.png',
       excerpt: 'Providing primary care to the most underserved urban communities this quarter.'
     },
     {
@@ -51,7 +51,7 @@ const Blog = () => {
       title: 'Solar Wells: Clean Water for Every Household',
       date: 'March 30, 2024',
       result: '500 Families',
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800',
+      image: '/clean_water_impact_1778653137199.png',
       excerpt: 'No more walking miles for water. Solar technology is providing constant access.'
     },
     {
@@ -60,7 +60,7 @@ const Blog = () => {
       title: 'Join our Weekend Mentorship Program',
       date: 'March 15, 2024',
       result: 'Join Us',
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=800',
+      image: '/programs_hero_community_1778921679296.png',
       excerpt: 'Spend your weekends shaping the future of a child. Volunteer orientation next week.'
     },
     {
@@ -69,7 +69,7 @@ const Blog = () => {
       title: 'The Power of Collective: Self-Help Groups',
       date: 'March 05, 2024',
       result: '25 SHGs Formed',
-      image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800',
+      image: '/digital_literacy_impact_1778653160515.png',
       excerpt: 'Building resilient community structures to ensure long-term sustainable growth.'
     }
   ];
@@ -94,7 +94,7 @@ const Blog = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="v5-portal-wrap"
             >
-              <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800" alt="Blog Hero" className="v5-portal-image" />
+              <img src="/hero_impact_foundation_1778653399978.png" alt="Blog Hero" className="v5-portal-image" />
               <div className="v5-floating-accent" />
             </motion.div>
           </div>

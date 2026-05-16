@@ -44,7 +44,7 @@ const Programs = () => {
       ],
       icon: Sparkles,
       color: '#8b5cf6',
-      image: 'https://images.unsplash.com/photo-1533221216134-c3309f30dd52?auto=format&fit=crop&q=80&w=800'
+      image: '/women_empowerment_program_1778921114215.png'
     },
     {
       title: 'Green Telangana',
@@ -95,21 +95,21 @@ const Programs = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="v5-bubble b1"
             >
-              <img src="https://images.unsplash.com/photo-1571019614242-1cb2f99b2d8b?q=80&w=400" alt="I1" />
+              <img src="/programs_hero_education_1778921539494.png" alt="Education Impact" />
             </motion.div>
             <motion.div 
               animate={{ y: [0, 30, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="v5-bubble b2"
             >
-              <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=400" alt="I2" />
+              <img src="/programs_hero_healthcare_1778921577563.png" alt="Healthcare Impact" />
             </motion.div>
             <motion.div 
               animate={{ x: [0, 20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="v5-bubble b3"
             >
-              <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=400" alt="I3" />
+              <img src="/programs_hero_community_1778921679296.png" alt="Community Impact" />
             </motion.div>
             <motion.div 
               animate={{ scale: [1, 1.1, 1] }}

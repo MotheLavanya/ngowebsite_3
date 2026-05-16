@@ -20,7 +20,11 @@ const VolunteerSpotlight = () => {
       <div className="container spotlight-stack-container">
         <div className="spotlight-text-side">
           <SectionHeader subtitle="Our Heroes" title="Volunteer Spotlight" />
-          <p className="spotlight-intro">Discover the stories of the amazing people who make our mission possible every day.</p>
+          <p className="spotlight-intro">
+            Our mission isn't powered by numbers alone, but by the extraordinary individuals who choose to give their time and talent. 
+            From urban classrooms to rural medical camps, these heroes are the driving force behind every life we transform. 
+            Discover their journeys and see how a single act of service ripples through an entire community.
+          </p>
           <div className="stack-controls">
             <button onClick={next} className="stack-next-btn">
               Next Story <ArrowRight size={20} />

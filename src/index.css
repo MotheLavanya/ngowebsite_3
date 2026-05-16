@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+  width: 100%;
+}
 :root {
   --primary: #ff8c00; /* orange */
   --primary-dark: #e07c00;
@@ -34,12 +39,37 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.8; /* Slightly more space for better line alignment */
+}
+
+/* Ensure centering remains for specifically styled items */
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0f172a;
 }
 
 a {
@@ -69,6 +99,12 @@ button {
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 .section-padding {
   padding: 6rem 0;
 }
@@ -76,6 +112,12 @@ button {
 @media (max-width: 768px) {
   .section-padding {
     padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 3rem 0;
   }
 }
 
@@ -176,4 +218,55 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #cbd5e1;
+}
+
+/* ── Google Translate Widget Overrides ── */
+.translate-widget {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Hide the Google top frame that pushes the body down */
+.skiptranslate > iframe.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Force body top to 0 to prevent jumping */
+body {
+  top: 0 !important;
+}
+
+/* Hide the "Powered by Google Translate" branding and extra text */
+.goog-logo-link {
+  display: none !important;
+}
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0;
+}
+
+/* Style the native select dropdown */
+.goog-te-combo {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-main);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.goog-te-combo:hover {
+  border-color: var(--primary);
+}
+
+.scrolled .goog-te-combo {
+  background: rgba(255, 255, 255, 0.9);
 }

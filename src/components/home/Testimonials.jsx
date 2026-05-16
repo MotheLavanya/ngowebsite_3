@@ -25,41 +25,39 @@ const Testimonials = () => {
     }
   ];
 
+  // Duplicate testimonials to create an endless loop
+  const marqueeItems = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
+
   return (
-    <section className="testimonials-section section-padding">
+    <section className="testimonials-section section-padding" style={{ overflow: 'hidden' }}>
       <div className="container">
         <SectionHeader 
           subtitle="Voices of Change" 
           title="What Our Beneficiaries Say" 
         />
-        <div className="testimonials-grid-modern">
-          {testimonials.map((t, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -15 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="testimonial-v2-card"
-            >
-              <div className="t-v2-header">
-                <div className="t-v2-img">
+      </div>
+
+      <div className="marquee-container">
+        <div className="marquee-track">
+          {marqueeItems.map((t, i) => (
+            <div key={i} className="marquee-card">
+              <div className="marquee-header">
+                <div className="marquee-img">
                   <img src={t.image} alt={t.name} />
                 </div>
-                <div className="t-v2-stars">
+                <div className="marquee-stars">
                   {[...Array(5)].map((_, idx) => <Star key={idx} size={14} fill="currentColor" />)}
                 </div>
               </div>
-              <div className="t-v2-body">
-                <Quote className="t-v2-quote" size={32} />
+              <div className="marquee-body">
+                <Quote className="marquee-quote" size={32} />
                 <p>"{t.text}"</p>
               </div>
-              <div className="t-v2-footer">
+              <div className="marquee-footer">
                 <h4>{t.name}</h4>
                 <span>{t.role}</span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

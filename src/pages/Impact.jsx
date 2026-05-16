@@ -95,21 +95,21 @@ const Impact = () => {
               transition={{ duration: 1 }}
               className="v3-portal-main"
             >
-              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800" alt="Community Impact" />
+              <img src="/hero_impact_foundation_1778653399978.png" alt="Community Impact" />
             </motion.div>
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="v3-portal-sub s1"
             >
-              <img src="https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?q=80&w=400" alt="Education" />
+              <img src="/programs_hero_education_1778921539494.png" alt="Education" />
             </motion.div>
             <motion.div 
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="v3-portal-sub s2"
             >
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=400" alt="Healthcare" />
+              <img src="/programs_hero_healthcare_1778921577563.png" alt="Healthcare" />
             </motion.div>
             <div className="v3-accent-blob" />
           </div>

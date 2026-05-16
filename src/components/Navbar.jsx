@@ -21,6 +21,26 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Initialize Google Translate
+  useEffect(() => {
+    if (!document.getElementById('google-translate-script')) {
+      window.googleTranslateElementInit = () => {
+        if (window.google && window.google.translate) {
+          new window.google.translate.TranslateElement(
+            { pageLanguage: 'en', autoDisplay: false },
+            'google_translate_element'
+          );
+        }
+      };
+
+      const script = document.createElement('script');
+      script.id = 'google-translate-script';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
@@ -32,7 +52,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="logo-container">
           <Heart className="logo-icon" size={32} fill="var(--primary)" />
@@ -50,15 +70,18 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
+        </div>
+
+        <div className="nav-actions">
+          <div id="google_translate_element" className="translate-widget"></div>
           <Link to="/donate" className="btn-donate-nav">
             Donate Now
           </Link>
+          {/* Mobile Toggle */}
+          <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -75,11 +98,12 @@ const Navbar = () => {
                 key={link.name} 
                 to={link.path} 
                 className={`mobile-link ${location.pathname === link.path ? 'active' : ''}`}
+                onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <Link to="/donate" className="btn-donate-mobile">
+            <Link to="/donate" className="btn-donate-mobile" onClick={() => setIsOpen(false)}>
               Donate Now
             </Link>
           </motion.div>
@@ -121,6 +145,7 @@ const Navbar = () => {
           align-items: center;
           gap: 0.75rem;
           text-decoration: none;
+          flex: 1;
         }
 
         .logo-icon {
@@ -131,22 +156,53 @@ const Navbar = () => {
           font-family: 'Outfit', sans-serif;
           font-size: 1.6rem;
           font-weight: 900;
-          background: linear-gradient(135deg, var(--primary) 0%, #f97316 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: var(--primary) !important;
           letter-spacing: -1px;
           text-transform: capitalize;
+        }
+
+        .logo-text span {
+          color: #1e3a8a !important;
         }
 
         .desktop-links {
           display: none;
           align-items: center;
+          justify-content: center;
           gap: 2rem;
         }
 
         @media (min-width: 1024px) {
           .desktop-links {
             display: flex;
+          }
+          
+          .nav-actions {
+            flex: 1;
+            justify-content: flex-end;
+          }
+        }
+
+        .nav-actions {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+          .translate-widget {
+            position: absolute;
+            top: 520px; /* Position inside the open mobile menu below the donate button */
+            left: 2rem;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+          }
+          
+          .navbar.menu-open .translate-widget {
+            opacity: 1;
+            pointer-events: auto;
           }
         }
 
@@ -173,13 +229,21 @@ const Navbar = () => {
         }
 
         .btn-donate-nav {
+          display: none;
           background: var(--primary);
           color: white;
           padding: 0.6rem 1.5rem;
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 0.95rem;
+          white-space: nowrap;
           box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
+        }
+
+        @media (min-width: 1024px) {
+          .btn-donate-nav {
+            display: inline-block;
+          }
         }
 
         .btn-donate-nav:hover {
@@ -189,13 +253,18 @@ const Navbar = () => {
         }
 
         .mobile-toggle {
-          display: block;
-          color: var(--text-main);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #0f172a !important; /* Force dark color so it's always visible */
+          z-index: 50;
+          padding: 0.5rem;
+          margin-right: -0.5rem; /* Offset padding */
         }
 
         @media (min-width: 1024px) {
           .mobile-toggle {
-            display: none;
+            display: none !important;
           }
         }
 
@@ -205,7 +274,7 @@ const Navbar = () => {
           left: 0;
           right: 0;
           background: white;
-          padding: 2rem;
+          padding: 2rem 2rem 6rem 2rem; /* Extra padding at bottom for translate widget */
           display: flex;
           flex-direction: column;
           gap: 1.5rem;

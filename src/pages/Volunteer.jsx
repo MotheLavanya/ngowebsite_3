@@ -68,7 +68,7 @@ const Volunteer = () => {
               className="v4-portal-wrap"
             >
               <img
-                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop"
+                src="/programs_hero_community_1778921679296.png"
                 alt="Volunteer Hero"
                 className="v4-portal-image"
               />

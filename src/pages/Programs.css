@@ -78,6 +78,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 1024px) {
@@ -91,6 +92,14 @@
 .v5-stats-mini {
   display: flex;
   gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .v5-stats-mini {
+    gap: 1.5rem;
+  }
 }
 
 .v5-s-item {
@@ -164,6 +173,27 @@
   z-index: 3;
 }
 
+@media (max-width: 640px) {
+  .b1 {
+    width: 160px;
+    height: 160px;
+    top: 5%;
+    right: 5%;
+  }
+  .b2 {
+    width: 120px;
+    height: 120px;
+    bottom: 5%;
+    right: 40%;
+  }
+  .b3 {
+    width: 90px;
+    height: 90px;
+    top: 55%;
+    right: 0;
+  }
+}
+
 .v5-orb {
   position: absolute;
   border-radius: 50%;
@@ -215,17 +245,15 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .program-card-v3.reverse {
-    direction: ltr;
+  .program-card-v3.reverse .program-content-v3 {
+    order: 0; /* Reset order on mobile so image is always on top */
   }
 }
 
-.program-card-v3.reverse {
-  direction: rtl;
-}
-
-.program-card-v3.reverse .program-content-v3 {
-  direction: ltr;
+@media (min-width: 1025px) {
+  .program-card-v3.reverse .program-content-v3 {
+    order: -1; /* Flips layout to text-left, image-right on desktop */
+  }
 }
 
 /* ── Image Side ── */
@@ -246,6 +274,12 @@
 
 .program-card-v3:hover .program-image-v3 img {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .program-image-v3 {
+    height: 250px;
+  }
 }
 
 .program-image-v3::after {
@@ -331,6 +365,7 @@
   margin-bottom: 1.5rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 
 .p-stat h4 {
@@ -352,6 +387,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* ── Final CTA ── */
