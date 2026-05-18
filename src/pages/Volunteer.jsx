@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Users, Book, Award, Heart, CheckCircle, Send } from 'lucide-react';
 import Button from '../components/Button';
@@ -6,6 +6,18 @@ import './Volunteer.css';
 
 const Volunteer = () => {
   const [formStatus, setFormStatus] = useState('idle');
+
+  useEffect(() => {
+    if (window.location.hash === '#apply') {
+      const timer = setTimeout(() => {
+        const element = document.getElementById('apply');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

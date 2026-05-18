@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 // Lazy loading pages for performance
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
+const OurStory = lazy(() => import('./pages/OurStory'));
 const Programs = lazy(() => import('./pages/Programs'));
 const Impact = lazy(() => import('./pages/Impact'));
 const Donate = lazy(() => import('./pages/Donate'));
@@ -44,6 +45,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/our-story" element={<OurStory />} />
               <Route path="/programs" element={<Programs />} />
               <Route path="/impact" element={<Impact />} />
               <Route path="/donate" element={<Donate />} />

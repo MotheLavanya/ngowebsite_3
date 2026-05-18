@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Background Glow -->
+    <radialGradient id="impactBGGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff2df" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Book 1 (Bottom, Warm Orange) -->
+    <linearGradient id="bookBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dd4400"/>
+      <stop offset="100%" stop-color="#ff7700"/>
+    </linearGradient>
+
+    <!-- Book 2 (Middle, Fresh Teal) -->
+    <linearGradient id="bookMiddle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+
+    <!-- Book 3 (Top, Golden Yellow) -->
+    <linearGradient id="bookTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Pages White Gradient -->
+    <linearGradient id="pagesGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+
+    <!-- Sun Glow -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shadow -->
+    <filter id="bookShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#d97706" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background Soft Warm Glow -->
+  <circle cx="200" cy="200" r="160" fill="url(#impactBGGlow)"/>
+
+  <!-- Rising Sun (Hope/Education) -->
+  <circle cx="200" cy="140" r="60" fill="url(#sunGlow)" opacity="0.3"/>
+  <circle cx="200" cy="140" r="20" fill="#f59e0b" opacity="0.8"/>
+
+  <!-- Sparkles of Knowledge -->
+  <g opacity="0.8">
+    <path d="M200,50 L203,58 L211,60 L203,62 L200,70 L197,62 L189,60 L197,58 Z" fill="#f59e0b"/>
+    <path d="M110,120 L112,125 L117,126 L112,127 L110,132 L108,127 L103,126 L108,125 Z" fill="#ff7700"/>
+    <path d="M290,110 L292,115 L297,116 L292,117 L290,122 L288,117 L283,116 L288,115 Z" fill="#14b8a6"/>
+    <circle cx="260" cy="80" r="3" fill="#f59e0b"/>
+    <circle cx="140" cy="90" r="4" fill="#ffd699"/>
+  </g>
+
+  <!-- Premium Stack of Books -->
+  <g filter="url(#bookShadow)" transform="translate(0, 10)">
+    
+    <!-- BOOK 1 (Bottom Orange Book) -->
+    <g>
+      <!-- Cover Spine -->
+      <path d="M100,280 L290,280 L290,310 C290,315 285,320 280,320 L110,320 C105,320 100,315 100,310 Z" fill="url(#bookBottom)"/>
+      <!-- Inner Pages -->
+      <rect x="105" y="285" width="180" height="25" fill="url(#pagesGrad)" rx="2"/>
+      <!-- Pages lines -->
+      <line x1="115" y1="292" x2="275" y2="292" stroke="#e2e8f0" stroke-width="2"/>
+      <line x1="115" y1="302" x2="275" y2="302" stroke="#e2e8f0" stroke-width="2"/>
+    </g>
+
+    <!-- BOOK 2 (Middle Teal Book, Slightly Rotated/Shifted) -->
+    <g transform="rotate(-3, 200, 240)">
+      <!-- Cover Spine -->
+      <path d="M110,220 L300,220 L300,250 C300,255 295,260 290,260 L120,260 C115,260 110,255 110,250 Z" fill="url(#bookMiddle)"/>
+      <!-- Inner Pages -->
+      <rect x="115" y="225" width="180" height="25" fill="url(#pagesGrad)" rx="2"/>
+      <!-- Pages lines -->
+      <line x1="125" y1="232" x2="285" y2="232" stroke="#e2e8f0" stroke-width="2"/>
+      <line x1="125" y1="242" x2="285" y2="242" stroke="#e2e8f0" stroke-width="2"/>
+    </g>
+
+    <!-- BOOK 3 (Top Golden Book, Centered) -->
+    <g>
+      <!-- Cover Spine -->
+      <path d="M120,160 L280,160 L280,190 C280,195 275,200 270,200 L130,200 C125,200 120,195 120,190 Z" fill="url(#bookTop)"/>
+      <!-- Inner Pages -->
+      <rect x="125" y="165" width="150" height="25" fill="url(#pagesGrad)" rx="2"/>
+      <!-- Pages lines -->
+      <line x1="135" y1="172" x2="265" y2="172" stroke="#e2e8f0" stroke-width="2"/>
+      <line x1="135" y1="182" x2="265" y2="182" stroke="#e2e8f0" stroke-width="2"/>
+    </g>
+
+    <!-- Graduation/Wisdom Bookmark Ribbon Hanging Out -->
+    <path d="M250,200 L250,270 L240,260 L230,270 L230,200 Z" fill="#ee5253"/>
+  </g>
+</svg>

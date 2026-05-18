@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight } from 'lucide-react';
 import SectionHeader from '../SectionHeader';
 
 const UpcomingEvents = () => {
+  const navigate = useNavigate();
   const events = [
     {date:'12 Aug 2024', title:'Community Clean‑up', icon:<Calendar size={24} />},
     {date:'25 Sep 2024', title:'Health Awareness Workshop', icon:<Calendar size={24} />},
@@ -39,7 +41,10 @@ const UpcomingEvents = () => {
               </div>
               
               <div className="event-card-footer">
-                <button className="event-action-link">
+                <button 
+                  className="event-action-link"
+                  onClick={() => navigate('/volunteer#apply')}
+                >
                   Register Now <ArrowRight size={16} />
                 </button>
               </div>

@@ -9,12 +9,42 @@ const WaysToHelp = () => {
   const [activeIdx, setActiveIdx] = React.useState(0);
   
   const ways = [
-    { title: 'One-time Donation', desc: 'Support our immediate needs with a single gift.', icon: Heart },
-    { title: 'Monthly Giving', desc: 'Provide steady support by becoming a recurring donor.', icon: Calendar },
-    { title: 'Volunteer Time', desc: 'Share your skills and passion directly on the ground.', icon: Users },
-    { title: 'Corporate Partner', desc: 'Engage your company in meaningful social impact.', icon: Briefcase },
-    { title: 'Social Advocacy', desc: 'Use your voice to raise awareness for our causes.', icon: Megaphone },
-    { title: 'Legacy Giving', desc: 'Leave a lasting impact for generations to come.', icon: Gift }
+    { 
+      title: 'One-time Donation', 
+      desc: 'Support our immediate needs with a single gift.', 
+      icon: Heart,
+      image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=400'
+    },
+    { 
+      title: 'Monthly Giving', 
+      desc: 'Provide steady support by becoming a recurring donor.', 
+      icon: Calendar,
+      image: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=400'
+    },
+    { 
+      title: 'Volunteer Time', 
+      desc: 'Share your skills and passion directly on the ground.', 
+      icon: Users,
+      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=400'
+    },
+    { 
+      title: 'Corporate Partner', 
+      desc: 'Engage your company in meaningful social impact.', 
+      icon: Briefcase,
+      image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=400'
+    },
+    { 
+      title: 'Social Advocacy', 
+      desc: 'Use your voice to raise awareness for our causes.', 
+      icon: Megaphone,
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400'
+    },
+    { 
+      title: 'Legacy Giving', 
+      desc: 'Leave a lasting impact for generations to come.', 
+      icon: Gift,
+      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=400'
+    }
   ];
 
   return (
@@ -43,12 +73,28 @@ const WaysToHelp = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.2 }}
                 className="circle-center-content"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)), url(${ways[activeIdx].image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  transition: 'background-image 0.4s ease-in-out'
+                }}
               >
-                <div className="center-icon">
+                <div 
+                  className="center-icon"
+                  style={{
+                    background: 'rgba(249, 115, 22, 0.15)',
+                    color: 'var(--primary)',
+                    border: '1px solid rgba(249, 115, 22, 0.3)',
+                    marginBottom: '1rem'
+                  }}
+                >
                   {React.createElement(ways[activeIdx].icon, { size: 32 })}
                 </div>
-                <h4>{ways[activeIdx].title}</h4>
-                <p>{ways[activeIdx].desc}</p>
+                <h4 style={{ color: '#ffffff', fontWeight: '800', marginBottom: '0.5rem' }}>{ways[activeIdx].title}</h4>
+                <p style={{ color: '#e2e8f0', fontSize: '0.85rem', lineHeight: '1.4' }}>{ways[activeIdx].desc}</p>
               </motion.div>
             </AnimatePresence>
 
@@ -61,7 +107,7 @@ const WaysToHelp = () => {
                     key={idx} 
                     className={`orbit-icon-node ${activeIdx === idx ? 'active' : ''}`}
                     style={{ '--node-angle': `${angle}deg` }}
-                    onMouseEnter={() => setActiveIdx(idx)}
+                    onClick={() => setActiveIdx(idx)}
                   >
                     <div className="node-inner">
                       <way.icon size={22} />

@@ -205,9 +205,29 @@ const Donate = () => {
 
       <style>{`
         .donate-page .page-header {
-          padding: 10rem 0 6rem;
-          background: #fcfcfc;
+          padding: 10rem 0 8rem;
+          background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1600');
+          background-size: cover;
+          background-position: center;
           text-align: center;
+          color: #ffffff;
+        }
+
+        .donate-page .page-header h1 {
+          color: #ffffff;
+          font-weight: 950;
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          letter-spacing: -0.02em;
+          margin-bottom: 1.5rem;
+        }
+
+        .donate-page .page-header p {
+          color: #f1f5f9;
+          font-size: clamp(1rem, 2vw, 1.2rem);
+          line-height: 1.6;
+          text-align: center !important;
+          max-width: 700px;
+          margin: 0 auto;
         }
 
         .donate-grid {

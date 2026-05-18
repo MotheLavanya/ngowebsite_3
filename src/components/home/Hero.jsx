@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Heart, Play, Sparkles, CheckCircle } from 'lucide-react';
 import Button from '../Button';
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [videoText, setVideoText] = useState('See Our Story');
 
   const handleVideoClick = () => {
@@ -70,7 +72,7 @@ const Hero = () => {
               transition={{ duration: 1 }}
               className="main-layered-img"
             >
-              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Education" />
+              <img src="/hero_boys_books.png" alt="Smiling Schoolboys with Books" />
             </motion.div>
             
             <motion.div 
@@ -79,7 +81,7 @@ const Hero = () => {
               transition={{ delay: 0.5, duration: 1 }}
               className="floating-layered-img img-small-1"
             >
-              <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=400" alt="Healthcare" />
+              <img src="/hero_medical_clinic.png" alt="Doctors Medical Clinic Camp" />
             </motion.div>
 
             <motion.div 
@@ -88,7 +90,7 @@ const Hero = () => {
               transition={{ delay: 0.8, duration: 1 }}
               className="floating-layered-img img-small-2"
             >
-              <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=400" alt="Community" />
+              <img src="/hero_girl_education.png" alt="Right to Education Chalkboard" />
             </motion.div>
             
             {/* Decorative Elements */}
@@ -120,10 +122,10 @@ const Hero = () => {
             <Button to="/donate" size="lg" icon={ArrowRight} className="btn-impact">
               Donate Now
             </Button>
-            <div 
+            <Link 
+              to="/our-story" 
               className="hero-video-link" 
-              onClick={handleVideoClick}
-              style={{ cursor: 'pointer' }}
+              style={{ textDecoration: 'none', cursor: 'pointer' }}
             >
               <div className="play-btn-outer">
                 <div className="play-btn-inner">
@@ -131,7 +133,7 @@ const Hero = () => {
                 </div>
               </div>
               <span>{videoText}</span>
-            </div>
+            </Link>
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-trust-modern">

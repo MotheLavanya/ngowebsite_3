@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Target, Heart, ShieldCheck, Zap } from 'lucide-react';
 import SectionHeader from '../SectionHeader';
 
 const ImpactStories = () => {
+  const navigate = useNavigate();
   const stories = [
     {
       title: 'Education for All',
@@ -88,6 +90,7 @@ const ImpactStories = () => {
 
             <motion.button 
               whileHover={{ x: 10 }}
+              onClick={() => navigate('/programs')}
               className="view-all-impact-btn"
             >
               Learn More About Our Programs <ArrowRight size={20} />
