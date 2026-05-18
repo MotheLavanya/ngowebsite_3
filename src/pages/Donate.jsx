@@ -55,6 +55,22 @@ const Donate = () => {
           >
             Your contribution provides education, healthcare, and a chance at a better life for those in need.
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            style={{
+              color: '#ff8c00',
+              fontSize: '0.9rem',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              marginTop: '1.5rem',
+              textAlign: 'center'
+            }}
+          >
+            Last Updated: May 2024
+          </motion.p>
         </div>
       </section>
 

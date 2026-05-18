@@ -13,7 +13,7 @@ const RefundPolicy = () => {
           >
             Refund Policy
           </motion.h1>
-          <p>Effective Date: May 2024</p>
+          <p className="text-center">Last Updated: May 2024</p>
         </div>
       </section>
 

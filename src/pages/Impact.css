@@ -220,6 +220,14 @@
   text-align: center;
   flex: 1;
   position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.stat-card-v4:hover {
+  transform: translateY(-8px);
 }
 
 .stat-card-v4:not(:last-child)::after {
@@ -236,6 +244,56 @@
   .stat-card-v4:not(:last-child)::after {
     display: none;
   }
+}
+
+.stat-value-v4 {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.1rem;
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+}
+
+.stat-value-v4 h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem); /* Reduced font size from 2.8rem-3.8rem */
+  font-weight: 950;
+  color: #0f172a;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-family: 'Outfit', sans-serif;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-value-v4 span {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem); /* Reduced font size from 1.8rem-2.5rem */
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-label-v4 {
+  font-size: 0.8rem; /* Reduced label font size from 0.9rem */
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-align: center !important; /* Force center alignment over global justify */
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card-v4:hover .stat-value-v4 h3 {
+  color: var(--primary);
+}
+
+.stat-card-v4:hover .stat-value-v4 span {
+  transform: scale(1.1) translateY(-1px);
+}
+
+.stat-card-v4:hover .stat-label-v4 {
+  color: #0f172a;
 }
 
 .stories-v5-header {
@@ -648,7 +706,7 @@
 
 /* ── Transparency & Reach ── */
 .transparency-section {
-  padding: 5rem 0;
+  padding: 3rem 0; /* Reduced padding from 5rem to minimize height */
   background: #0f172a;
   color: white;
   text-align: center;
@@ -660,33 +718,51 @@
 }
 
 .transparency-box h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem; /* Slightly smaller for a tighter layout */
   font-weight: 950;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced margin */
 }
 
 .transparency-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2rem; /* Reduced gap */
+  margin-top: 2rem; /* Reduced margin */
 }
 
 @media (max-width: 768px) {
-  .transparency-grid { grid-template-columns: 1fr; }
+  .transparency-grid { 
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.trans-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem; /* Tighter layout for items */
+}
+
+.trans-item svg {
+  color: var(--primary); /* Accent color for icons */
+  margin-bottom: 0.25rem;
 }
 
 .trans-item h4 {
-  font-size: 1.5rem;
-  font-weight: 900;
+  font-size: 1.8rem;
+  font-weight: 950;
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  margin: 0;
+  line-height: 1.1;
 }
 
 .trans-item p {
   font-size: 0.9rem;
-  opacity: 0.6;
+  opacity: 0.75;
   font-weight: 600;
+  text-align: center !important; /* Strictly centered */
+  margin: 0;
 }
 /* ── Moments of Hope Mosaic Gallery V5 ── */
 .impact-mosaic-gallery-v5 {

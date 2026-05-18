@@ -312,7 +312,7 @@ const Impact = () => {
                 <p>On-ground Impact Reports</p>
               </div>
             </div>
-            <div style={{ marginTop: '4rem' }}>
+            <div style={{ marginTop: '2.5rem' }}>
               <Button to="/donate" variant="primary">Invest in a Future</Button>
             </div>
           </div>

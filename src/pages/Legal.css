@@ -17,6 +17,7 @@
   color: #0f172a;
   margin-bottom: 1rem;
   letter-spacing: -2px;
+  text-align: center !important;
 }
 
 .legal-header p {
@@ -25,6 +26,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center !important;
 }
 
 .legal-content {
